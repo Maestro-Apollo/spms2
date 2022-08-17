@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="myForm">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" />
+        <input type="checkbox" id="ckbCheckAll" />
+        <p id="checkBoxes">
+            <input type="checkbox" class="checkBoxClass" />
+            <br />
+            <input type="checkbox" class="checkBoxClass" />
+            <br />
+            <input type="checkbox" class="checkBoxClass" />
+            <br />
+            <input type="checkbox" class="checkBoxClass" />
+            <br />
+            <input type="checkbox" class="checkBoxClass" />
+            <br />
+        </p>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        let submitForm = document.getElementById('myForm');
+        submitForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let x = document.querySelector('input[name=name]').value;
+            let y = document.querySelector('input[name=email]').value;
+            let z = document.querySelector('input[name=password]').value;
+
+            let arr = [];
+            arr.push(x);
+            arr.push(y);
+            arr.push(z);
+
+            console.log(arr);
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#ckbCheckAll').click(function() {
+                $('.checkBoxClass').prop('checked', $(this).prop('checked'));
+            });
+        });
+    </script>
+</body>
+
+</html>
